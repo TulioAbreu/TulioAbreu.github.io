@@ -3,9 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Marco Túlio</title>
+    <style>
+        .my-photo {
+            width: 150px;
+            border-radius: 75px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(81, 81, 255);
+            padding: 0;
+        }
+
+        .title-box {
+            margin: 50px;
+            text-align: center;
+
+            text-shadow: -3px 3px 5px black;
+        }
+
+        .eye-text {
+            color: whitesmoke;
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        .portfolio-box {
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 50px;
+
+            padding: 5%;
+
+            border-radius: 10px;
+            background-color: whitesmoke;
+        }
+
+        .main-title {
+            color: whitesmoke;
+            font-size: 80px;
+            text-transform: uppercase;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .filter-button {
+            background-color: #7777e6;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            border: 0px;
+
+            transition: background-color .3s linear;
+        }
+
+        .filter-button:hover {
+            transition: background-color .3s linear;
+            background-color: #4b4b9b;
+        }
+
+        #buttons-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .project {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid black;
+        }
+        
+        .project:last-child {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h3 {
+            font-weight: normal;
+        }
+
+        .navbar {
+            display: flexbox;
+            flex-direction: row;
+
+            text-align: center;
+            margin-bottom: 60px;
+            height: 30px
+        }
+
+        .navbar-item {
+            color: whitesmoke;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-shadow: -2px 2px 2px black;
+
+            padding-left: 25px;
+            padding-right: 25px;
+
+            transition: font-size .1s;
+        }
+
+        .navbar-item:hover {
+            font-size: 24px;
+            font-weight: bold;
+
+            transition: font-size .1s linear;
+        }
+
+        .navbar-item:last-child {
+            padding-right: 0px;
+            border-right: 0px;
+        }
+
+        .section-title-container:first-child {
+            margin-top: 0px;
+        }
+
+        .section-title-container {
+            width: 200px;
+            margin: auto;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: dashed 4px black;            
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        .about-me {
+            margin-left: 25%;
+            margin-right: 25%;
+            text-align: center;
+        }
+
+        .flex-container {
+            margin-top: 25px;
+            margin-bottom: 25px;
+
+            display: flexbox;
+            flex-direction: row;
+            text-align: center;
+        }
+
+        .social-item {
+            margin-left: 2.5px;
+            margin-right: 2.5px;
+        }
+        
+        @media(max-width: 800px) {
+            .main-title {
+                font-size: 42px;
+            }
+
+            .portfolio-box {
+                margin-left: 0px;
+                margin-right: 0px;
+                padding: 5px;
+            }
+
+            .navbar {
+                display: flex;
+                flex-direction: column;
+                text-align: unset;
+            }
+
+            .navbar-item {
+                flex: 1;
+                padding: 0;
+                padding-bottom: 20px;
+                margin: auto;
+            }
+        }
+        .text-center {
+            text-align: center;
+        }
+   </style>
 </head>
 <body>
-    Hello, World!
+    <div class="title-box">
+        <div class="main-title">
+            Marco Tulio
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a class="navbar-item" href="#about-me">About me</a>
+        <a class="navbar-item" href="#projects">Projects</a>
+    </div>
+
+    <div class="portfolio-box">
+        <div>
+            <div class="section-title-container">
+                <div id="about-me" class="section-title">
+                    About me
+                </div>
+            </div>
+
+            <div class="about-me">
+                Hey, I'm Marco! I'm a computer scientist graduated at <i>Universidade Federal de Ouro Preto (UFOP)</i> (2016-20) and a technology fanatic.
+            </div>
+
+            <div class="flex-container">
+                <a href="https://github.com/TulioAbreu/"><img class="social-item" src="./github.png"/></a>
+                <a href="https://www.linkedin.com/in/marco-túlio-oliveira-abreu-840599190"><img class="social-item" src="./linkedin.png"/></a>
+            </div>
+
+            <div class="section-title-container">
+                <div id="projects" class="section-title">
+                    Projects
+                </div>
+            </div>
+
+            <div class="text-center">
+                You can access the project pages on Github by clicking on their respective titles.
+            </div>
+
+            <div id="buttons-container">
+            </div>        
+            <div id="projects-container">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getProjectLanguages(projects) {
+            let langList = ["All"];
+            for (let id in projects) {
+                const { language } = projects[id];
+                if (!langList.includes(language)) {
+                    langList.push(language);
+                }
+            }
+            return langList;
+        }
+
+        let buttonsContainer = document.getElementById("buttons-container");
+        let projectsContainer = document.getElementById("projects-container");
+
+        let projects = [
+            {
+                title: 'snake-game',
+                language: 'C++',
+                description: 'Simple snake game written in C++ and SFML Library.',
+                link: 'https://github.com/TulioAbreu/snake-game'
+            },
+            {
+                title: 'my-animelist-songs',
+                language: 'Javascript',
+                description: 'NodeJS script for getting all animes opening and songs (name/youtubeURL) from the animes you have seen.',
+                link: 'https://github.com/TulioAbreu/my-animelist-songs'
+            },
+            {
+                title: 'omnistack-week-10',
+                language: 'Javascript',
+                description: 'Omnistack Week #10 web application (front-end and back-end) made with React, React Native and NodeJS.',
+                link: 'https://github.com/TulioAbreu/omnistack-week-10'
+            },
+            {
+                title: 'tindev',
+                language: 'Javascript',
+                description: 'Omnistack Week #8 web application (front-end and back-end) made with React, React Native and NodeJS.',
+                link: 'https://github.com/TulioAbreu/tindev'
+            },
+            {
+                title: 'pokedex-js',
+                language: 'Javascript',
+                description: 'Pokedex web application that scrapes data from famous websites (written with React and NodeJS).',
+                link: 'https://github.com/TulioAbreu/pokedex-js'
+            },
+            {
+                title: 'arclass-website',
+                language: 'Javascript',
+                description: 'Website prototype used in a university class (written in ReactJS).',
+                link: 'https://github.com/TulioAbreu/arclass-website'
+            },
+            {
+                title: 'bluetooth-recorder',
+                language: 'Android Java',
+                description: 'App made for recording accelerometer data and send it via Bluetooth to another device.',
+                link: 'https://github.com/TulioAbreu/bluetooth-recorder'
+            },
+            {
+                title: 'firefighter-problem',
+                language: 'Python',
+                description: 'My solution for graphs firefighter problem written in Python.',
+                link: 'https://github.com/TulioAbreu/firefighter-problem'
+            }
+        ]
+        let languages = getProjectLanguages(projects);
+
+        function selectLanguage(selectedLang) {
+            clearProjects();
+            filterLang(selectedLang);
+        }
+        
+        function clearProjects() {
+            projectsContainer.innerHTML = "";
+        }
+
+        function filterLang(lang) {
+            for (let id in projects) {
+                const project = projects[id];
+
+                if (lang == "All" || lang == project.language) {
+                    projectsContainer.innerHTML += `<div class="project"><h2><a href="${project.link}"> > ${project.title} </a> </h2><h3>${project.description}</h3></div>`
+                }
+            }
+        }
+
+        for (let languageId in languages) {
+            buttonsContainer.innerHTML += `<button class="filter-button" onclick="selectLanguage('${languages[languageId]}')"> ${languages[languageId].toUpperCase()} </button>`;
+        }
+
+        selectLanguage("All");
+    </script>
 </body>
 </html>
