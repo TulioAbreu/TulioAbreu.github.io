@@ -166,15 +166,15 @@
             margin-left: 2.5px;
             margin-right: 2.5px;
         }
-        
+
         @media(max-width: 800px) {
             .main-title {
                 font-size: 42px;
             }
 
             .portfolio-box {
-                margin-left: 0px;
-                margin-right: 0px;
+                margin-left: 0;
+                margin-right: 0;
                 padding: 5px;
             }
 
@@ -194,30 +194,38 @@
         .text-center {
             text-align: center;
         }
-        
+
         .project-container {
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            border-bottom: 2px dashed black;
+        }
+
+        .project-container:last-child {
+            padding-bottom: 0px;
+            border-bottom: 0px;
+        }
+
+        .project-image {
+            margin: auto;
             height: 200px;
-        }
+            width: 200px;
 
-        .showcase {
-            float: left;
-            margin-right: 30px;
-
-            height: 150px;
-            width: 150px;
             border-radius: 15px;
-            box-shadow: 2px 2px 8px black;
-        }
+            box-shadow: 3px 3px 8px;
+            display: block;
 
-        .showcase-title-container {
             margin-bottom: 10px;
         }
 
-        .showcase-title {
+        .project-title {
+            font-family: 'Consolas';
             font-size: 32px;
         }
 
-        .showcase-description {
+        .project-description {
+            font-family: 'Consolas';
             font-size: 18px;
         }
 
@@ -226,7 +234,7 @@
 <body>
     <div class="title-box">
         <div class="main-title">
-            Marco Tulio
+            Tulio_Abreu
         </div>
     </div>
 
@@ -367,14 +375,10 @@
                 if (lang == "All" || lang == project.language) {
                     projectsContainer.innerHTML += `
                         <div class="project-container">
-                            <img class="showcase" src="${project.imageURL}"/>
-                            <div class="description">
-                                    <div class="showcase-title-container">
-                                        <a class="showcase-title" href="${project.link}"> > ${project.title} </a> 
-                                    </div>
-                                    <div class="showcase-description">
-                                        ${project.description}
-                                    </div>
+                            <img class="project-image" src="${project.imageURL}"/>
+                            <a class="project-title" href="${project.link}"> > ${project.title} </a> 
+                            <div class="project-description">
+                                ${project.description}
                             </div>
                         </div>`
                 }
