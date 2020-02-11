@@ -138,7 +138,7 @@
             margin: auto;
             margin-bottom: 30px;
             padding-bottom: 10px;
-            border-bottom: dashed 4px black;            
+            border-bottom: dashed 4px black;
         }
 
         .section-title {
@@ -194,6 +194,33 @@
         .text-center {
             text-align: center;
         }
+        
+        .project-container {
+            height: 200px;
+        }
+
+        .showcase {
+            float: left;
+            margin-right: 30px;
+
+            height: 150px;
+            width: 150px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 8px black;
+        }
+
+        .showcase-title-container {
+            margin-bottom: 10px;
+        }
+
+        .showcase-title {
+            font-size: 32px;
+        }
+
+        .showcase-description {
+            font-size: 18px;
+        }
+
    </style>
 </head>
 <body>
@@ -262,55 +289,64 @@
                 title: 'snake-game',
                 language: 'C++',
                 description: 'Simple snake game written in C++ and SFML Library.',
-                link: 'https://github.com/TulioAbreu/snake-game'
+                link: 'https://github.com/TulioAbreu/snake-game',
+                imageURL: 'https://camo.githubusercontent.com/2600db5e2b7f6fb9ccf061eaafa2cbf44b11283e/68747470733a2f2f692e696d6775722e636f6d2f544370325773332e706e67',
             },
             {
                 title: 'my-animelist-songs',
                 language: 'Javascript',
                 description: 'NodeJS script for getting all animes opening and songs (name/youtubeURL) from the animes you have seen.',
-                link: 'https://github.com/TulioAbreu/my-animelist-songs'
+                link: 'https://github.com/TulioAbreu/my-animelist-songs',
+                imageURL: './console_application.png',
             },
             {
                 title: 'omnistack-week-10',
                 language: 'Javascript',
                 description: 'Omnistack Week #10 web application (front-end and back-end) made with React, React Native and NodeJS.',
-                link: 'https://github.com/TulioAbreu/omnistack-week-10'
+                link: 'https://github.com/TulioAbreu/omnistack-week-10',
+                imageURL: './omnistack-week-10.png',
             },
             {
                 title: 'tindev',
                 language: 'Javascript',
                 description: 'Omnistack Week #8 web application (front-end and back-end) made with React, React Native and NodeJS.',
-                link: 'https://github.com/TulioAbreu/tindev'
+                link: 'https://github.com/TulioAbreu/tindev',
+                imageURL: './tindev.png',
             },
             {
                 title: 'pokedex-js',
                 language: 'Javascript',
                 description: 'Pokedex web application that scrapes data from famous websites (written with React and NodeJS).',
-                link: 'https://github.com/TulioAbreu/pokedex-js'
+                link: 'https://github.com/TulioAbreu/pokedex-js',
+                imageURL: './pokedexjs.png'
             },
             {
                 title: 'arclass-website',
                 language: 'Javascript',
                 description: 'Website prototype used in a university class (written in ReactJS).',
-                link: 'https://github.com/TulioAbreu/arclass-website'
+                link: 'https://github.com/TulioAbreu/arclass-website',
+                imageURL: './arclass.png'
             },
             {
                 title: 'bluetooth-recorder',
                 language: 'Android Java',
                 description: 'App made for recording accelerometer data and send it via Bluetooth to another device.',
-                link: 'https://github.com/TulioAbreu/bluetooth-recorder'
+                link: 'https://github.com/TulioAbreu/bluetooth-recorder',
+                imageURL: './console_application.png',
             },
             {
                 title: 'firefighter-problem',
                 language: 'Python',
                 description: 'My solution for graphs firefighter problem written in Python.',
-                link: 'https://github.com/TulioAbreu/firefighter-problem'
+                link: 'https://github.com/TulioAbreu/firefighter-problem',
+                imageURL: './console_application.png',
             },
             {
                 title: 'gido [incomplete]',
                 language: 'Python',
                 description: 'GiDo is a scripting tool for converting your code TODOs into GitHub issues.',
-                link: 'https://github.com/TulioAbreu/gido'
+                link: 'https://github.com/TulioAbreu/gido',
+                imageURL: './console_application.png',
             }
         ]
         let languages = getProjectLanguages(projects);
@@ -329,7 +365,18 @@
                 const project = projects[id];
 
                 if (lang == "All" || lang == project.language) {
-                    projectsContainer.innerHTML += `<div class="project"><h2><a href="${project.link}"> > ${project.title} </a> </h2><h3>${project.description}</h3></div>`
+                    projectsContainer.innerHTML += `
+                        <div class="project-container">
+                            <img class="showcase" src="${project.imageURL}"/>
+                            <div class="description">
+                                    <div class="showcase-title-container">
+                                        <a class="showcase-title" href="${project.link}"> > ${project.title} </a> 
+                                    </div>
+                                    <div class="showcase-description">
+                                        ${project.description}
+                                    </div>
+                            </div>
+                        </div>`
                 }
             }
         }
