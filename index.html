@@ -4,529 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Túlio</title>
-    <style>
-        .my-photo {
-            width: 150px;
-            border-radius: 75px;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: rgb(81, 81, 255);
-            padding: 0;
-        }
-
-        .title-box {
-            margin: 50px;
-            text-align: center;
-
-            text-shadow: -3px 3px 5px black;
-        }
-
-        .eye-text {
-            color: whitesmoke;
-            font-size: 24px;
-        }
-
-        h2 {
-            font-size: 32px;
-        }
-
-        .portfolio-box {
-            margin-left: 10%;
-            margin-right: 10%;
-            margin-bottom: 50px;
-
-            padding: 5%;
-
-            border-radius: 10px;
-            background-color: whitesmoke;
-        }
-
-        .main-title {
-            color: whitesmoke;
-            font-size: 80px;
-            text-transform: uppercase;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .filter-button {
-            background-color: #7777e6;
-            color: white;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px;
-            border: 0px;
-
-            transition: background-color .3s linear;
-        }
-
-        .filter-button:hover {
-            transition: background-color .3s linear;
-            background-color: #4b4b9b;
-        }
-
-        #buttons-container {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .project {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid black;
-        }
-        
-        .project:last-child {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            border-bottom: 0px;
-        }
-
-        a {
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        h3 {
-            font-weight: normal;
-        }
-
-        .navbar {
-            display: flexbox;
-            flex-direction: row;
-
-            text-align: center;
-            margin-bottom: 60px;
-            height: 30px
-        }
-
-        .navbar-item {
-            color: whitesmoke;
-            font-size: 20px;
-            text-transform: uppercase;
-            text-shadow: -2px 2px 2px black;
-
-            padding-left: 25px;
-            padding-right: 25px;
-
-            transition: font-size .1s;
-        }
-
-        .navbar-item:hover {
-            font-size: 24px;
-            font-weight: bold;
-
-            transition: font-size .1s linear;
-        }
-
-        .navbar-item:last-child {
-            padding-right: 0px;
-            border-right: 0px;
-        }
-
-        .section-title-container:first-child {
-            margin-top: 0px;
-        }
-
-        .section-title-container {
-            width: 200px;
-            margin: auto;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: dashed 4px black;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 42px;
-            font-weight: bold;
-        }
-
-        .about-me {
-            margin-left: 25%;
-            margin-right: 25%;
-            text-align: center;
-        }
-
-        .flex-container {
-            margin-top: 25px;
-            margin-bottom: 25px;
-
-            display: flexbox;
-            flex-direction: row;
-            text-align: center;
-        }
-
-        .social-item {
-            margin-left: 2.5px;
-            margin-right: 2.5px;
-        }
-
-        @media(max-width: 800px) {
-            .main-title {
-                font-size: 42px;
-            }
-
-            .portfolio-box {
-                margin-left: 0;
-                margin-right: 0;
-                padding: 5px;
-            }
-
-            .navbar {
-                display: flex;
-                flex-direction: column;
-                text-align: unset;
-            }
-
-            .navbar-item {
-                flex: 1;
-                padding: 0;
-                padding-bottom: 20px;
-                margin: auto;
-            }
-        }
-        .text-center {
-            text-align: center;
-        }
-
-        .project-container {
-            text-align: center;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            border-bottom: 2px dashed black;
-        }
-
-        .project-container:last-child {
-            padding-bottom: 0px;
-            border-bottom: 0px;
-        }
-
-        .project-image {
-            margin: auto;
-            height: 200px;
-            width: 200px;
-
-            border-radius: 15px;
-            box-shadow: 3px 3px 8px;
-            display: block;
-
-            margin-bottom: 10px;
-        }
-
-        .project-title {
-            font-family: 'Consolas';
-            font-size: 32px;
-        }
-
-        .project-description {
-            font-family: 'Consolas';
-            font-size: 18px;
-        }
-
-        .languages-selection {
-            text-align: right;
-            margin-right: 10%;
-        }
-
-        .language {
-            margin: 5px;
-
-            color: whitesmoke;
-            transition: background-color .3s linear;
-            background-color: #7777e6;
-            padding: 10px;
-            border-radius: 5px;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .language:hover {
-            transition: background-color .3s linear;
-            background-color: #4b4b9b;
-        }
-
-   </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="languages-selection">
-        <div class="language" onclick="setLanguage('en')"">English</div>
-        <div class="language" onclick="setLanguage('pt')">Português</div>
-    </div>
-
-    <div class="title-box">
-        <div class="main-title">
-            Tulio_Abreu
-        </div>
-    </div>
-
-    <div class="navbar">
-        <a id="nav-about-me" class="navbar-item" href="#about-me">About me</a>
-        <a id="nav-projects" class="navbar-item" href="#projects">Projects</a>
-    </div>
-
-    <div class="portfolio-box">
-        <div>
-            <div class="section-title-container">
-                <div id="about-me" class="section-title">
-                    About me
-                </div>
+    <div class="desk-image" alt="Imagem de uma mesa de trabalho com um notebook, um caderno de anotações e uma xícara de café.">
+        <div class="navbar">
+            <div class="navbar-item">
+                <a href="#sobre">Sobre</a>
             </div>
-
-            <div id="sobre-descricao" class="about-me">
+            <div class="navbar-item">
+                <a href="#portfolio">Portfolio</a>
             </div>
-
-            <div class="flex-container">
-                <a href="https://github.com/TulioAbreu/"><img class="social-item" src="./assets/github.png"/></a>
-                <a href="https://www.linkedin.com/in/marco-túlio-oliveira-abreu-840599190"><img class="social-item" src="./assets/linkedin.png"/></a>
-            </div>
-
-            <div class="section-title-container">
-                <div id="projects" class="section-title">
-                    Projects
-                </div>
-            </div>
-
-            <div id="projects-tip" class="text-center">
-                
-            </div>
-
-            <div id="buttons-container">
-            </div>
-            <div id="projects-container">
+            <div class="navbar-item">
+                <a href="#contato">Contato</a>
             </div>
         </div>
+
     </div>
 
-    <script>
-        function getProjectLanguages(projects) {
-            let langList = ["All"];
-            for (let id in projects) {
-                const { language } = projects[id];
-                if (!langList.includes(language)) {
-                    langList.push(language);
-                }
-            }
-            return langList;
-        }
+    <div class="transition"></div>
 
-        let sobreDescricao = {
-            pt: 'Ei, eu sou o Marco! Sou um cientista da computação graduado pela Universidade Federal de Ouro Preto (UFOP) (2016-20) e um fanático pela tecnologia!',
-            en: `Hey, I'm Marco! I'm a computer scientist graduated at <i>Universidade Federal de Ouro Preto (UFOP)</i> (2016-20) and a technology fanatic.`,
-        }
-        let dicaProjetos = {
-            pt: 'Você pode acessar o código dos projetos ao clicar em seus títulos.',
-            en: 'You can access the project pages on Github by clicking on their respective titles.',
-        }
+    <div class="container">
+        <div class="title" id="sobre">
+            Sobre
+        </div>
 
-        let sobreDescricaoContainer = document.getElementById("sobre-descricao");
-        let projectTip = document.getElementById("projects-tip");
-        let buttonsContainer = document.getElementById("buttons-container");
-        let projectsContainer = document.getElementById("projects-container");
-        let navAboutMe = document.getElementById("nav-about-me");
-        let navProjects = document.getElementById("nav-projects");
-        let titleAboutMe = document.getElementById('about-me');
-        let titleProjects = document.getElementById('projects');
-        let projects = [
-            {
-                title: 'snake-game',
-                language: 'C++',
-                description: {
-                    en: 'Simple snake game written in C++ and SFML Library.',
-                    pt: 'Simples jogo da cobrinha escrito usando C++ e a biblioteca SFML.',
-                },
-                link: 'https://github.com/TulioAbreu/snake-game',
-                imageURL: 'https://camo.githubusercontent.com/2600db5e2b7f6fb9ccf061eaafa2cbf44b11283e/68747470733a2f2f692e696d6775722e636f6d2f544370325773332e706e67',
-            },
-            {
-                title: 'my-animelist-songs',
-                language: 'Javascript',
-                description: {
-                    pt: 'Script feito em NodeJs para formar uma lista de todas aberturas e encerramentos dos animes presentes em seu MyAnimeList',
-                    en: 'NodeJS script for getting all animes opening and songs (name/youtubeURL) from the animes you have seen.',
-                },
-                link: 'https://github.com/TulioAbreu/my-animelist-songs',
-                imageURL: './assets/console_application.png',
-            },
-            {
-                title: 'omnistack-week-10',
-                language: 'Javascript',
-                description: {
-                    pt: 'Aplicação construída durante a Semana Omnistack 10 utilizando React, React Native e NodeJS',
-                    en: 'Omnistack Week #10 web application (front-end and back-end) made with React, React Native and NodeJS.',
-                },
-                link: 'https://github.com/TulioAbreu/omnistack-week-10',
-                imageURL: './assets/omnistack-week-10.png',
-            },
-            {
-                title: 'tindev',
-                language: 'Javascript',
-                description: {
-                    pt: 'Aplicação construída durante a Semana Omnistack 8 utilizando React e NodeJS',
-                    en: 'Omnistack Week #8 web application (front-end and back-end) made with React, React Native and NodeJS.',
-                },
-                link: 'https://github.com/TulioAbreu/tindev',
-                imageURL: './assets/tindev.png',
-            },
-            {
-                title: 'pokedex-js',
-                language: 'Javascript',
-                description: {
-                    pt: 'Aplicação web de uma Pokédex que apresenta dados extraídos de outros websites (escrito em React e NodeJS).',
-                    en: 'Pokedex web application that scrapes data from famous websites (written with React and NodeJS).',
-                },
-                link: 'https://github.com/TulioAbreu/pokedex-js',
-                imageURL: './assets/pokedexjs.png'
-            },
-            {
-                title: 'arclass-website',
-                language: 'Javascript',
-                description: {
-                    pt: 'Protótipo de front-end construído para uma disciplina de empreendedorismo, na universidade. Foi feito utilizando ReactJS.',
-                    en:  'Website prototype used in a university class (written in ReactJS).',
-                },
-                link: 'https://github.com/TulioAbreu/arclass-website',
-                imageURL: './assets/arclass.png'
-            },
-            {
-                title: 'bluetooth-recorder',
-                language: 'Android Java',
-                description: {
-                    pt: 'Aplicativo construído para gravar dados de acelerômetro e enviá-los via bluetooth para outro dispositivo.',
-                    en: 'App made for recording accelerometer data and send it via Bluetooth to another device.',
-                },
-                link: 'https://github.com/TulioAbreu/bluetooth-recorder',
-                imageURL: './assets/console_application.png',
-            },
-            {
-                title: 'firefighter-problem',
-                language: 'Python',
-                description: {
-                    pt: 'Minha solução para o problema de brigadistas em grafos, escrita em Python.',
-                    en: 'My solution for graphs firefighter problem written in Python.',
-                },
-                link: 'https://github.com/TulioAbreu/firefighter-problem',
-                imageURL: './assets/console_application.png',
-            },
-            {
-                title: 'gido [incomplete]',
-                language: 'Python',
-                description: {
-                    pt: 'GiDo é uma ferramenta para converter TODOs em issues no Github.',
-                    en: 'GiDo is a scripting tool for converting your code TODOs into GitHub issues.',
-                },
-                link: 'https://github.com/TulioAbreu/gido',
-                imageURL: './assets/console_application.png',
-            },
-            {
-                title: 'uri-online-judge',
-                language: 'All',
-                description: {
-                    pt: 'Uso este repositório para manter o controle das soluções de problemas que já resolvi na plataforma.',
-                    en: 'I use this repository for keeping track of my solutions to what I\'ve already solved.',
-                },
-                link: 'https://github.com/TulioAbreu/uri-online-judge',
-                imageURL: 'https://www.urionlinejudge.com.br/judge/img/5.0/logo-big.png',
-            }
-        ]
-        let languages = getProjectLanguages(projects);
-        let currentLanguage = "";
-        setLanguage("pt");
+        <div class="description">
+            Meu nome é Marco Túlio! Sou um cientista da computação graduado pela Universidade Federal de Ouro Preto (2016-2020). Atualmente, estou iniciando o meu Mestrado também na UFOP. Tenho experiência com desenvolvimento de aplicativos web e mobile, além de uma breve noção na área de aprendizado de máquina.
+        </div>
 
-        function setLanguage(lang) {
-            currentLanguage = lang;
-            reloadProjects("All");
-            updateNav();
-            updateTitles();
-            updateText();
-        }
+        <img class="photo" src="./assets/marco.jpg" alt="Foto de Marco Túlio">
 
-        function updateText() {
-            switch (currentLanguage) {
-                case 'pt': {
-                    sobreDescricaoContainer.innerHTML = sobreDescricao.pt;
-                    projectTip.innerHTML = dicaProjetos.pt;
-                } break;
-                case 'en': {
-                    sobreDescricaoContainer.innerHTML = sobreDescricao.en;
-                    projectTip.innerHTML = dicaProjetos.en;
-                } break;
-            }
-        }
+        <div class="transition-3"></div>
 
-        function updateTitles() {
-            switch (currentLanguage) {
-                case 'pt': {
-                    titleAboutMe.innerHTML = "Sobre";
-                    titleProjects.innerHTML = "Projetos";
-                } break;
-                case 'en': {
-                    titleAboutMe.innerHTML = "About me";
-                    titleProjects.innerHTML = "Projects";
-                } break;
-            }
-        }
+        <div id="portfolio" class="title">
+            Portfolio
+        </div>
 
-        function updateNav() {
-            switch (currentLanguage) {
-                case 'pt': {
-                    navAboutMe.innerHTML = "Sobre";
-                    navProjects.innerHTML = "Projetos";
-                } break;
-                case 'en': {
-                    navAboutMe.innerHTML = "About me";
-                    navProjects.innerHTML = "Projects";
-                } break;
-            }
-        }
+        <div class="project-container">
+            <div class="project-title">
+                Omnistack Week #10
+            </div>
+            <img class="project-image" src="./assets/omnistack-week-10.png" alt="Imagem da aplicação Omnistack Week 10">
+            <div class="used-techs">
+                ReactJS, React Native, NodeJS, Javascript
+            </div>
+            <div class="project-description">
+                Aplicação desenvolvida em um curso online de duração de uma semana. Nesta aplicação é implementada uma espécie de listagem de desenvolvedores. Na página da web são exibidos usuários cadastrados nas proximidades, fazendo o uso de geolocalização. No aplicativo, desenvolvido em React Native, é possível visualizar as localizações em um mapa e acessar o perfil do Github dos usuários próximos. Repositório <a class="repo-link" href="https://github.com/TulioAbreu/omnistack-week-10/">clique aqui</a>.
+            </div>
+        </div>
 
-        function selectProgrammingLanguage(selectedLang) {
-            reloadProjects(selectedLang);
-        }
+        <div class="transition-2"></div>
+
+        <div class="project-container">
+            <div class="project-title">
+                Pokedéx JS
+            </div>
+            <img class="project-image" src="./assets/pokedexjs.png" alt="Imagem da aplicação Pokedex JS">
+            <div class="used-techs">
+                ReactJS, NodeJS, MongoDB, Bootstrap, Javascript
+            </div>
+            <div class="project-description">
+                Aplicação web desenvolvida para a disciplina de Gerência de Dados da Web, na universidade. Esta aplicação é basicamente um repositório de buscas de dados sobre Pokémon. Todos os dados presentes nas páginas são extraídos e atualizados a partir de outras páginas da web de forma automática. Também foi implementado um mecanismo de armazenamento que funciona como uma espécie de cache temporário, para evitar repetidas requisições similares nas mesmas páginas.  Repositório <a class="repo-link" href="https://github.com/TulioAbreu/pokedex-js">clique aqui</a>.
+            </div>
+        </div>
+
+
+        <div class="transition-2"></div>
+
+        <div class="project-container">
+            <div class="project-title">
+                Arclass Website
+            </div>
+            <img class="project-image" src="./assets/arclass.png" alt="Imagem do protótipo ARClass">
+            <div class="used-techs">
+                ReactJS, Javascript
+            </div>
+            <div class="project-description">
+                Protótipo de website desenvolvido para uma apresentação da disciplina de Empreendedorismo, na universidade. A idéia desse protótipo era apresentar um "produto", que no caso era um marketplace de modelos 3D para sua utilização com tecnologia de realidade aumentada. Por se tratar apenas de um protótipo, apenas a interface foi implementada, sem qualquer funcionalidade real. Repositório <a class="repo-link" href="https://github.com/TulioAbreu/arclass-website">clique aqui</a>.
+            </div>
+        </div>
+
+
+        <div class="transition-2"></div>
+
+        <div class="project-container">
+            <div class="project-title">
+                Omnistack Week #8
+            </div>
+            <img class="project-image" src="./assets/tindev.png" alt="Imagem da aplicação Tindev">
+            <div class="used-techs">
+                ReactJS, MongoDB, NodeJS, Javascript
+            </div>
+            <div class="project-description">
+                Aplicação desenvolvida em um curso online de duração de uma semana. Esta aplicação é uma pequena rede social baseada no Tinder, voltada para desenvolvedores. Neste caso, o usuário deve inserir o seu perfil do Github para realizar o cadastro. A partir disso será exibida uma outra página onde são outros usuários cadastrados. É possível curtir ou descurtir outros desenvolvedores e caso haja um "match", é exibida uma janela informativa em tempo real. Repositório <a class="repo-link" href="https://github.com/TulioAbreu/tindev">clique aqui</a>.
+            </div>
+        </div>
+
+        <div class="transition-2"></div>
+
+        <div class="project-container">
+            <div class="project-title">
+                MyAnimelistSongs
+            </div>
+            <div class="used-techs">
+                NodeJS, Javascript
+            </div>
+            <div class="project-description">
+                Este é um script feito em NodeJS para se montar uma lista de todas as músicas de abertura e encerramento de animações assitidas. A partir de um nome de perfil do MyAnimeList, é realizada a extração na web dos nomes dessas músicas de todos as animações adicionadas ao perfil.Repositório <a class="repo-link" href="https://github.com/TulioAbreu/my-animelist-songs">clique aqui</a>.
+            </div>
+        </div>
+
+        <div class="transition-2"></div>
+
+        <div class="project-container">
+            <div class="project-title">
+                Uri Online Judge
+            </div>
+            <div class="used-techs">
+                C++, Haskell, Python
+            </div>
+            <div class="project-description">
+                Este é um repositório onde guardo as minhas soluções submetidas no site UriOnlineJudge. Este site contém diversos problemas de programação para serem resolvidos. Repositório <a class="repo-link" href="https://github.com/TulioAbreu/uri-online-judge">clique aqui</a>.
+            </div>
+        </div>
+
+        <div class="transition-2"></div>
+
+        <div class="project-container">
+            <div class="project-title">
+                Firefighter Problem
+            </div>
+            <div class="used-techs">
+                Python
+            </div>
+            <div class="project-description">
+                Esta é uma ferramenta desenvolvida para a disciplina Otimização em Redes, na universidade. A partir de instâncias pré-definidas, a ferramenta deverá encontrar uma solução para o problema de brigadistas em grafos. O enunciado é explicado mais detalhadamente no "readme" do repositório. Repositório <a class="repo-link" href="https://github.com/TulioAbreu/firefighter-problem">clique aqui</a>.
+            </div>
+        </div>
+
+        <div class="transition-2"></div>
+
+        <div class="project-container">
+            <div class="project-title">
+                Administração de repúblicas
+            </div>
+            <div class="used-techs">
+                Django, Python
+            </div>
+            <div class="project-description">
+                Este é um website desenvolvido para a disciplina de Programação Web, na Universidade. Participou também do projeto <a href="https://www.linkedin.com/in/layla-miranda-103928192/">Layla Miranda</a>. O objetivo do projeto era implementar um website que funcionasse como um anúncio para república, mas que também controlasse necessidades da casa como, por exemplo, a divisão das contas. Repositório <a class="repo-link" href="https://github.com/TulioAbreu/firefighter-problem">clique aqui</a>.
+            </div>
+        </div>
+
+        <div class="transition-3"></div>
         
-        function clearProjects() {
-            projectsContainer.innerHTML = "";
-        }
+        <div id="contato" class="title">
+            Contato
+        </div>
+        <div class="links-contato">
+            <div class="transition-2"></div>
+            <div>
+                <a href="https://github.com/TulioAbreu/">Github</a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/marco-t%C3%BAlio-oliveira-abreu-840599190/">Linkedin</a>
+            </div>
+        </div>
 
-        function reloadProjects(lang) {
-            clearProjects();
-
-            for (let id in projects) {
-                const project = projects[id];
-
-                let description = "";
-                switch (currentLanguage) {
-                case 'en': {
-                    description = project.description.en;
-                } break;
-                case 'pt': {
-                    description = project.description.pt;
-                } break;
-                }
-
-                if (lang == "All" || lang == project.language) {
-                    projectsContainer.innerHTML += `
-                        <div class="project-container">
-                            <img class="project-image" src="${project.imageURL}"/>
-                            <a class="project-title" href="${project.link}"> > ${project.title} </a> 
-                            <div class="project-description">
-                                ${description}
-                            </div>
-                        </div>`
-                }
-            }
-        }
-
-        for (let languageId in languages) {
-            buttonsContainer.innerHTML += `<button class="filter-button" onclick="selectProgrammingLanguage('${languages[languageId]}')"> ${languages[languageId].toUpperCase()} </button>`;
-        }
-
-        selectProgrammingLanguage("All");
-    </script>
+        <div class="transition-3"></div>
+    </div>
 </body>
 </html>
